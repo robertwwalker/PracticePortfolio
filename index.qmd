@@ -1,11 +1,19 @@
 ---
-title: "MyWebSite"
+title: "The Practice Portfolio"
+about:
+  template: trestles
 ---
 
-This is a Quarto website.
+This is the start of a portfolio page for the Communicating with Data course in the Atkinson Graduate School of Management and the Data Science Program at Willamette University.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
+```{r, cache=TRUE, message=FALSE, warning=FALSE, echo=FALSE}
+library(ggmap)
+library(osmdata)
+library(sf)
+library(emojifont)
+library(OpenStreetMap)
+OR_map <- get_map(getbb("Oregon"))
+Me <- data.frame(lat=45.5115834, lon=-122.6783126)
+ggmap(OR_map) + ggimage::geom_emoji(data=Me, aes(y=lat, x=lon), image="1f4aa", size=0.1) + theme_nothing()
 ```
+

@@ -5,10 +5,16 @@ project:
 website:
   title: "Practice Portfolio for CWD"
   navbar:
-    left:
+    foreground: "lavender"
+    background: "purple"
+    pinned: true
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
+  search: true
+  twitter-card:
+    creator: "@PieRatio"
 
 format:
   html:
@@ -17,6 +23,7 @@ format:
        dark: darkly    
     css: styles.css
     toc: true
+
 
 
 
